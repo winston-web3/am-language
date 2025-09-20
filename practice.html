@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>練習題 - Am 語</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Am 語練習題</h1>
+    <a href="index.html">回首頁</a>
+  </header>
+
+  <main>
+    <div id="question"></div>
+    <button id="option1"></button>
+    <button id="option2"></button>
+    <button id="option3"></button>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    const question = { en: "I am bad at math", am: "A Am Aa-Mm Am-Mm-Am" };
+    document.getElementById('question').innerText = question.en;
+
+    const options = [
+      question.am,
+      "Aa Am Aa-M Am-M",
+      "Am Aa Am-Mm Am"
+    ];
+
+    document.getElementById('option1').innerText = options[0];
+    document.getElementById('option2').innerText = options[1];
+    document.getElementById('option3').innerText = options[2];
+
+    function checkAnswer(ans){
+      if(ans === question.am) alert("答對了！");
+      else alert("再試一次！");
+    }
+
+    document.getElementById('option1').onclick = ()=>checkAnswer(options[0]);
+    document.getElementById('option2').onclick = ()=>checkAnswer(options[1]);
+    document.getElementById('option3').onclick = ()=>checkAnswer(options[2]);
+  </script>
+</body>
+</html>
